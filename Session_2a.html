@@ -173,6 +173,43 @@ pre code {
 
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
+<pre class="r"><code>fx = expression(x^2)
+
+
+df_dx = D(expr = fx, name = &quot;x&quot;)
+
+df_dx</code></pre>
+<pre><code>## 2 * x</code></pre>
+<pre class="r"><code>#evaluate the slope of f(x) at x = 831
+
+x = 831
+
+eval(expr = df_dx)</code></pre>
+<pre><code>## [1] 1662</code></pre>
+<pre class="r"><code>x = seq(from = -10, to = 10, by = .5)
+
+eval(expr = df_dx)</code></pre>
+<pre><code>##  [1] -20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10  -9  -8  -7  -6  -5  -4  -3  -2
+## [20]  -1   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+## [39]  18  19  20</code></pre>
+<pre class="r"><code>gt = expression(3 * t ^ 2 - 4 * cos (t))
+
+dg_dt = D(expr = gt, name = &#39;t&#39;)
+
+dg_dt</code></pre>
+<pre><code>## 3 * (2 * t) + 4 * sin(t)</code></pre>
+<pre class="r"><code>fx = expression(3 * x ^ 3 + x ^ 7 - 63 * x)
+
+df_dx = D(expr = fx, name = &quot;x&quot;)
+
+df_dx</code></pre>
+<pre><code>## 3 * (3 * x^2) + 7 * x^6 - 63</code></pre>
+<pre class="r"><code>fx = expression(cos(x^6))
+
+df_dx = D(expr = fx, name = &quot;x&quot;)
+
+df_dx</code></pre>
+<pre><code>## -(sin(x^6) * (6 * x^5))</code></pre>
 </div>
 
 

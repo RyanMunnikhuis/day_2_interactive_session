@@ -11,3 +11,47 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
+```{r}
+fx = expression(x^2)
+
+
+df_dx = D(expr = fx, name = "x")
+
+df_dx
+
+#evaluate the slope of f(x) at x = 831
+
+x = 831
+
+eval(expr = df_dx)
+
+x = seq(from = -10, to = 10, by = .5)
+
+eval(expr = df_dx)
+
+```
+
+
+```{r}
+gt = expression(3 * t ^ 2 - 4 * cos (t))
+
+dg_dt = D(expr = gt, name = 't')
+
+dg_dt
+
+```
+```{r}
+fx = expression(3 * x ^ 3 + x ^ 7 - 63 * x)
+
+df_dx = D(expr = fx, name = "x")
+
+df_dx
+```
+```{r}
+fx = expression(cos(x^6))
+
+df_dx = D(expr = fx, name = "x")
+
+df_dx
+```
+
